@@ -1,123 +1,429 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Construction Website</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADECC-Construction</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha384-pfKw3lVXuXBrGDDnZPmp5uovSKYF2wFsUpNuyO7W5d0T6oKT1r5lmgFjqTVux3bm" 
+    crossorigin="anonymous">
+    <style>
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .social-icons img {
+            max-width: 50px; 
+            height: auto;
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+            display: none;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 5%;
+        }
+
+        .menu {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        body a:hover {
+            background-color: #070bea;
+            color: #0be059;
+            transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: underline;
+            text-underline-position: below;
+            transition-duration: .5s;
+            transform-origin: right;
+            border-radius: 2%;
+        }
+
+        .logo-container {
+            max-width: 200px;
+            display: block;
+            margin: auto;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+        
+    </style>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+      </script>
 </head>
 <body>
-  <header>
-    <h1>Building Construction Company.</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="header">
+        <div class="logo-container">
+            <img class="logo" src="logo.jpeg" alt="Company Logo">
+        </div>
+    </div>
 
-  <main>
-    <section class="login">
-      <h2>Login</h2>
-      <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Login</button>
-      </form>
-    </section>
+    <div class="menu">
+        <a href="#home" onclick="showContent('home')">Home</a>
+        <a href="#portfolio" onclick="showContent('portfolio')">Portfolio</a>
+        <a href="#services" onclick="showContent('services')">Services</a>
+        <a href="#contact" onclick="showContent('contact')">Get in touch</a>
+        <a href="#about" onclick="showContent('about')">About</a>
+    </div>
 
-    <section class="register">
-      <h2>Register</h2>
-      <form>
-        <label for="fullname">Full Name:</label>
-        <input type="text" id="fullname" name="fullname" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="reg-username">Username:</label>
-        <input type="text" id="reg-username" name="reg-username" required>
-        <label for="reg-password">Password:</label>
-        <input type="password" id="reg-password" name="reg-password" required>
-        <button type="submit">Register</button>
-      </form>
-    </section>
-  </main>
+    <div class="content" id="contact">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h2>Get in touch With Us:</h2>
+            <input type="text" id="name" placeholder="name:" required>
+            <input type="email" id="email" placeholder="email id:" required>
+            <input type="text" id="phone" placeholder="phone(+237650320970):" required>
+            <input type="text" id="country" placeholder="country:" required>
+            <label>Interested In:</label><br>
+            <input type="checkbox" id="residential" name="interest[]" value="Residential">
+            <label for="residential">Residential</label><br>
+            <input type="checkbox" id="commercial" name="interest[]" value="Commercial">
+            <label for="commercial">Commercial</label><br>
+            <input type="checkbox" id="industrial" name="interest[]" value="Industrial">
+            <label for="industrial">Industrial</label><br><br>
+    
+            <label>Preferred Contact Method:</label><br>
+            <input type="radio" id="emailContact" name="contactMethod" value="Email" checked>
+            <label for="emailContact">Email</label><br>
+            <input type="radio" id="phoneContact" name="contactMethod" value="Phone" required>
+            <label for="phoneContact">Phone</label><br><br>
+            <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+            <label for="subscribe">Subscribe to Our newsletter:</label>
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes" required>
+            <label>Gender:</label><br>
+            <input type="radio" name="contact_method" value="email" checked required> Male<br>
+            <input type="radio" name="contact_method" value="phone" required> Female<br>
+            <button type="submit">Send</button>
+        </form>
+    </div>
 
-  <main>
+    <div class="social-icons">
+        <h2>Follow Us Here:</h2>
+        <a href="https://www.facebook.com/yourpage" target="_blank"><img src="facebook.jpg" alt="Facebook"></a>
+        <a href="https://www.whatsapp.com/yourpage" target="_blank"><img src="whatsapp.jpg" alt="Twitter"></a>
+        <a href="https://www.businesswhatsapp.com/yourpage" target="_blank"><img src="B. whatsapp.jpg" alt="Instagram"></a>
+    </div>
+
+    <div class="content" id="home">
+        <h2>Welcome to MADECC-Construction</h2>
+        <p>About MADECC Construction Company</p>
+    </div>
+
+    <div class="content" id="about">
+        <h2>About:</h2>
+        <p>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>About Us | MADECC-CONSTRUCTION</title>
+                <link rel="stylesheet" href="about.css">
+            </head>
+            <body>
+                <header>
+                    <h1>MADECC-CONSTRUCTION</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#home" onclick="showContent('home')">Home</a></li>
+                            <li><a href="#portfolio" onclick="showContent('portfolio')">Portfolio</a></li>
+                            <li><a href="#contact" onclick="showContent('contact')">Get in touch</a></li>
+                            <li><a href="#services" onclick="showContent('services')">Services</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                
+                <section class="about">
+                    <h2>About Us</h2>
+                    <p>About MADECC Construction Company:</p>
+                        At MADECC Construction, we take pride in building the future with excellence, integrity, and innovation. With a rich history spanning over [X] years, we have established ourselves as a trusted name in the construction industry.
+                        
+                        <p>Our Mission:</p>
+                        Empowering Communities Through Quality Construction
+                        
+                        We are committed to delivering top-notch construction solutions that not only meet but exceed our clients' expectations. Our mission is to contribute to the growth and development of communities by creating structures that stand the test of time.
+                        
+                        <p>Our Values:</p>
+                        Quality: We adhere to the highest standards of craftsmanship, ensuring every project is built to last.
+                        Integrity: Honesty and transparency are the cornerstones of our business. We believe in open communication and ethical practices.
+                        Innovation: Embracing modern techniques and technologies, we continuously seek innovative ways to improve our processes and outcomes.
+                        Safety: The well-being of our team and stakeholders is paramount. We maintain rigorous safety protocols on every project site.
+                        Sustainability: We prioritize environmentally-friendly practices, striving for sustainable construction methods and materials.
+                        <p>Our Team:</p>
+                        Our dedicated team of architects, engineers, project managers, and skilled craftsmen work in synergy to bring your vision to life. With a wealth of experience and a passion for excellence, we are poised to handle projects of varying scales and complexities.
+                        
+                        <p>Portfolio:</p>
+                        Over the years, we have had the privilege of working on an array of projects, from intricate residential builds to large-scale commercial developments. Each project is a testament to our commitment to quality and client satisfaction.
+                        
+                        <p>Community Involvement:</p>
+                        At MADECC, we believe in giving back to the communities we serve. Through initiatives such as mentorship programs, charitable contributions, and sustainable building practices, we aim to make a positive impact beyond construction.
+                        
+                        <p>Contact Us</p>
+                        Have a project in mind or just want to learn more <a href="mailto:madecccons@gmail.com">Contact US</a>? We'd love to hear from you! <a href="mailto:madecccons@gmail.com">Contact US</a> today to discuss how we can turn your vision into reality.</p>
+                </section>
+                <script src="script.js"></script>
+            </body>
+            </html>
+        </p>
+    </div>
+    
+    <div class="content" id="portfolio">
+        <h2>Portfolio</h2>
+        <p>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>MADECC Construction Portfolio</title>
+                <link rel="stylesheet" href="portfolio.css">
+                <style>
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact {
+    margin: 20px;
+}
+
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.floating-contact button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+                </style>
+            </head>
+            <body>
+                <header>
+                    <h1>MADECC Construction</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#home" onclick="showContent('home')">Home</a></li>
+                            <li><a href="#contact" onclick="showContent('contact')">Get in touch</a></li>
+                            <li><a href="#about" onclick="showContent('about')">About</a></li>
+                            <li><a href="#services" onclick="showContent('services')">Services</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            
+                <section id="projects">
+                    <h2>Projects</h2>
+                    <div class="project">
+                        <h3>Project 1</h3>
+                        <p>Description of Project 1.</p>
+                    </div>
+                </section>
+
     <section class="contact">
-      <h2>Contact Us</h2>
-      <form>
-        <label for="contact-name">Name:</label>
-        <input type="text" id="contact-name" name="contact-name" required>
-        <label for="contact-email">Email:</label>
-        <input type="email" id="contact-email" name="contact-email" required>
-        <label for="contact-message">Message:</label>
-        <textarea id="contact-message" name="contact-message" rows="4" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:madecccons@gmail.com">Mail Us Here</a></p>
+        <p>Address: 123 Main Street, Cityville, State, 12345</p>
     </section>
-  </main>
+                    <script src="script.js"></script>
+                    <script>
+                                   document.addEventListener('DOMContentLoaded', function() {
+                                   const contactButton = document.getElementById('contactButton');
 
-<style>
-     /* Reset some default styles */
-body, h1, h2, h3, ul, p {
-  margin: 0;
-  padding: 0;
-}
+                                   contactButton.addEventListener('click', function() {
+                                   window.location.href = 'mailto:your-email@example.com';
+                            });
+                       });
+                    </script>
+            </body>
+            </html>
+        </p>
+    </div>
 
-/* Basic styling */
-body {
-  font-family: Arial, sans-serif;
-}
 
-header {
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
-}
+    <div class="content" id="services">
+        <h2>Services</h2>
+        <p>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>MADECC Construction Services</title>
+                <link rel="stylesheet" href="services.css">
+                <script>
+                    document.addEventListener('contextmenu', function(e) {
+                      e.preventDefault();
+                    });
+                  </script>
+            </head>
+            <body>
+                <header>
+                    <h1>Welcome to MADECC Construction</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#home" onclick="showContent('home')">Home</a></li>
+                            <li><a href="#portfolio" onclick="showContent('portfolio')">Portfolio</a></li>
+                            <li><a href="#contact" onclick="showContent('contact')">Get in touch</a></li>
+                            <li><a href="#about" onclick="showContent('about')">About</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            
+                <section class="services">
+                    <div class="services">
+                        <img src="service (1).jpg" alt="Service 1">
+                        <h2>Service 1</h2>
+                        <p>Description of Service 1.</p>
+                    </div>
+            
+                    <div class="service">
+                        <img src="service (2).jpg" alt="Service 2">
+                        <h2>Service 2</h2>
+                        <p>Description of Service 2.</p>
+                    </div>
+                    <div class="service">
+                        <img src="service (3).jpg" alt="Service 2">
+                        <h2>Service 2</h2>
+                        <p>Description of Service 3.</p>
+                    </div>
+                    <div class="service">
+                        <img src="service (4).jpg" alt="Service 2">
+                        <h2>Service 2</h2>
+                        <p>Description of Service 4.</p>
+                    </div>
+                    <div class="service">
+                        <img src="service (5).jpg" alt="Service 2">
+                        <h2>Service 2</h2>
+                        <p>Description of Service 5.</p>
+                    </div>
+                    <div class="service">
+                        <img src="service (6).jpg" alt="Service 2">
+                        <h2>Service 2</h2>
+                        <p>Description of Service 6.</p>
+                    </div>
+                    <div class="service">
+                        <img src="service (7).jpg" alt="Service 2">
+                        <h2>Service 2</h2>
+                        <p>Description of Service 7.</p>
+                    </div>
+                    <div class="service">
+                        <img src="service (8).jpg" alt="Service 2">
+                        <h2>Service 2</h2>
+                        <p>Description of Service 8.</p>
+                    </div>
+                    <div class="service">
+                        <img src="service (9).jpg" alt="Service 2">
+                        <h2>Service 2</h2>
+                        <p>Description of Service 9.</p>
+                    </div>
+                    <div class="service">
+                        <img src="service (10).jpg" alt="Service 2">
+                        <h2>Service 2</h2>
+                        <p>Description of Service 10.</p>
+                    </div>           
+                </section>
+            
+                <script src="script.js"></script>
+                <script>
+                               document.addEventListener('DOMContentLoaded', function() {
+                               const services = document.querySelectorAll('.service');
 
-nav ul {
-  list-style: none;
-}
+                               services.forEach(service => {
+                               const description = service.querySelector('p');
+                               const toggleButton = document.createElement('button');
+                               toggleButton.textContent = 'Toggle Description';
 
-nav ul li {
-  display: inline-block;
-  margin-right: 20px;
-}
+                               toggleButton.addEventListener('click', function() {
+                               description.classList.toggle('show');
+                       });
 
-nav ul li a {
-  text-decoration: none;
-  color: white;
-}
+                            service.appendChild(toggleButton);
+                    });
+                });
+                </script>
+            </body>
+            </html>
+        </p>
+    </div>
 
-main {
-  padding: 20px;
-}
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+          Email.send({
+          SecureToken : " 7597102e-60cd-44f8-bdfb-95972fd23cfa", 
+          To : 'kasahreboy950@gmail.com',
+          From : document.getElementById("email").value,
+          Subject : "New contact form Enquiry",
+          Body : "name " +document.getElementById("name").value
+               + "<br> Email: " +document.getElementById("email").value
+               + "<br> Phone no: " +document.getElementById("phone").value
+               + "<br> Message: " +document.getElementById("message").value
+      }).then(
+        message => alert("Message sent successfully")
+      );
+       }
+    </script>
 
-.login, .register {
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
-}
+    <script>
+        function showContent(contentId) {
+            // Hide all content sections
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
 
-button {
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #555;
-}
-</style>
-
-  <footer>
-    <p>&copy; 2023 Building Construction Company. All rights reserved.</p>
-  </footer>
+            // Show the selected content section
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.style.display = 'block';
+        }
+    </script>
+    <div class="footer">
+        <p>Copyright &copy; 2015-2023 MADECC-Construction | All Right Reserved</p>
+    </div>
 </body>
 </html>
