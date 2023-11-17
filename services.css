@@ -4,9 +4,11 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
+    color: #444;
     padding: 20px;
     text-align: center;
+    justify-content: space-between;
+    text-justify: distribute;
 }
 
 header li a:hover {
@@ -30,7 +32,7 @@ nav li {
 }
 
 nav a {
-    color: #fff;
+    color: #444;
     text-decoration: none;
 }
 
@@ -39,17 +41,24 @@ nav a {
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
+    box-sizing: border-box;
+    background-image: -moz-repeating-linear-gradient(border-radius);
 }
 
 .service {
-    border: 1px solid #ccc;
+    border: 25px solid #dddee994;
+    border-radius: 100px;
     margin: 10px;
     padding: 10px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .service img {
     max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 100px;
+    border: 25px solid #1a1b1e94;
 }
 
 .service h2 {

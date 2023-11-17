@@ -6,7 +6,7 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
+    color: #444;
     padding: 10px;
     text-align: center;
 }
@@ -26,12 +26,32 @@ nav li {
 }
 
 nav a {
-    color: #fff;
+    color: #444;
     text-decoration: none;
+}
+header nav ul li a {
+    color: #a29292;
+}
+header h1{
+    color: #dccfcf;
 }
 
 section.about {
     margin: 20px;
+}
+.about h2 {
+    text-transform: uppercase;
+    text-decoration: darkslateblue;
+    color: #0f2edf79;
+}
+.about h1 {
+    text-transform: uppercase;
+    text-decoration: darkslateblue;
+    color: #0de3347c;
+}
+.about h3 {
+    text-decoration: darkslateblue;
+    color: #9617d66d;
 }
 
 footer {
